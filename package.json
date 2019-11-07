@@ -1,0 +1,24 @@
+{
+  "name": "node2019",
+  "version": "0.0.1",
+  "description": "learning node by creating an express server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jalmares/node2019.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "npm"
+  ],
+  "author": "Jalmari Espo",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Jalmares/node2019/issues"
+  },
+  "homepage": "https://github.com/Jalmares/node2019#readme"
+}
