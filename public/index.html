@@ -6,11 +6,19 @@
 </head>
 <body>
 <h1>
-    Demo static content
+    HTTP GET test
 </h1>
-<form action="/animals">
+<form action="/animals" method="get">
     <input type="text" name="name" placeholder="dog">
     <input type="submit">
+</form>
+
+<h1>
+    HTTP POST test
+</h1>
+<form action="/animals" method="post">
+    <input type="text" name="name" placeholder="frog">
+    <input type="submit" value="insert">
 </form>
 </body>
 </html>

@@ -4,6 +4,7 @@ const express = require('express');
 const connection = require('./module/db');
 
 const app = express();
+const bodyParser = require('body-parser');
 
 app.use(express.static('public'));
 app.get('/animal', async (req, res) => {
@@ -29,6 +30,20 @@ app.get('/animal', async (req, res) => {
 			res.json(results);
 		} catch (e) {
 			res.send(`db error ${e}`);
+		}
+	});
+
+	app.post('/animals', bodyParser.urlencoded(), async (req, res) => {
+		console.log(req.body);
+		try{
+			const [result] = await connection.query(
+				'INSERT INTO animal (name) VALUES (?)',
+				[req.body.name]
+			);
+			res.json(result);
+		}catch (e) {
+			console.log(e);
+			res.send('db error');
 		}
 	});
 
