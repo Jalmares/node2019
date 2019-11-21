@@ -45,6 +45,6 @@ app.get('/animal', async (req, res) => {
 		res.send('this is demo');
 	});
 
-	app.listen(4000, () => {
+	app.listen(3000, () => {
 		console.log('server app start?');
 	});
