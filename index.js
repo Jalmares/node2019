@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 
 app.use(express.static('public'));
 
-app.get('/animal', async (req, res) => {
+app.get('/animals', async (req, res) => {
 	try {
 		res.json(await animal.getAll());
 	}catch (e) {
