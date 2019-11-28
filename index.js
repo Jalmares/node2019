@@ -6,6 +6,15 @@ const animal = require('./module/animal');
 const app = express();
 const bodyParser = require('body-parser');
 
+if(process.env.SERVER === 'dev.localhost') {
+	require('./secure/localhost')(app);
+} else {
+	require('./secure/server')(app);
+	app.listen(3000, () => {
+		console.log('server app start?');
+	});
+}
+
 app.use(express.static('public'));
 
 app.get('/animals', async (req, res) => {
@@ -43,8 +52,4 @@ app.get('/animal', async (req, res) => {
 
 	app.get('/demo', (req, res) => {
 		res.send('this is demo');
-	});
-
-	app.listen(3000, () => {
-		console.log('server app start?');
 	});
